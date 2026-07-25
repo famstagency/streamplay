@@ -137,15 +137,18 @@ Extracts the direct video stream from a StreamTape URL.
 
 ## Screenshots
 
-You can add screenshots from the `html ui/` folder or your deployed app here:
 
-```markdown
-![Home Screen Light](screens/homelight.png)
-![Player Screen Light](screens/light.png)
-![Home Screen Dark](screens/homedark.png)
-![Player Screen Dark](screens/dark.png)
-```
+### Home Screen (Light)
+<img src="./screens/homelight.png" alt="Home Screen Light" width="250"/>
 
+### Player Screen (Light)
+<img src="./screens/light.png" alt="Player Screen Light" width="250"/>
+
+### Home Screen (Dark)
+<img src="./screens/homedark.png" alt="Home Screen Dark" width="250"/>
+
+### Player Screen (Dark)
+<img src="./screens/dark.png" alt="Player Screen Dark" width="250"/>
 ---
 
 ## About Famst Agency
