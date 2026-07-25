@@ -138,18 +138,14 @@ Extracts the direct video stream from a StreamTape URL.
 ## Screenshots
 
 
-### Home Screen (Light)
-<img src="./screens/homelight.png" alt="Home Screen Light" width="250"/>
+<img src="https://raw.githubusercontent.com/famstagency/streamplay/main/screens/homelight.PNG" width="250" alt="Home Screen Light"/>
 
-### Player Screen (Light)
-<img src="./screens/light.png" alt="Player Screen Light" width="250"/>
+<img src="https://raw.githubusercontent.com/famstagency/streamplay/main/screens/light.PNG" width="250" alt="Player Screen Light"/>
 
-### Home Screen (Dark)
-<img src="./screens/homedark.png" alt="Home Screen Dark" width="250"/>
+<img src="https://raw.githubusercontent.com/famstagency/streamplay/main/screens/homedark.PNG" width="250" alt="Home Screen Dark"/>
 
-### Player Screen (Dark)
-<img src="./screens/dark.png" alt="Player Screen Dark" width="250"/>
----
+<img src="https://raw.githubusercontent.com/famstagency/streamplay/main/screens/dark.PNG" width="250" alt="Player Screen Dark"/>
+
 
 ## About Famst Agency
 
