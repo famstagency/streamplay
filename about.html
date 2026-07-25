@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | Famst Agency - StreamPlay</title>
+<script>
+  (() => {
+    const savedTheme = localStorage.getItem("streamplay-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.classList.toggle("dark", savedTheme ? savedTheme === "dark" : prefersDark);
+  })();
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary": "rgb(var(--primary) / <alpha-value>)", "on-primary": "rgb(var(--on-primary) / <alpha-value>)", "on-primary-container": "rgb(var(--on-primary-container) / <alpha-value>)",
+          "primary-container": "rgb(var(--primary-container) / <alpha-value>)", "primary-fixed-dim": "rgb(var(--primary-fixed-dim) / <alpha-value>)",
+          "tertiary": "rgb(var(--tertiary) / <alpha-value>)", "tertiary-container": "rgb(var(--tertiary-container) / <alpha-value>)",
+          "secondary": "rgb(var(--secondary) / <alpha-value>)", "secondary-container": "rgb(var(--secondary-container) / <alpha-value>)", "secondary-fixed-dim": "rgb(var(--secondary-fixed-dim) / <alpha-value>)",
+          "background": "rgb(var(--background) / <alpha-value>)", "on-background": "rgb(var(--on-background) / <alpha-value>)",
+          "surface": "rgb(var(--surface) / <alpha-value>)", "surface-container": "rgb(var(--surface-container) / <alpha-value>)", "surface-container-high": "rgb(var(--surface-container-high) / <alpha-value>)",
+          "surface-container-highest": "rgb(var(--surface-container-highest) / <alpha-value>)", "surface-container-low": "rgb(var(--surface-container-low) / <alpha-value>)",
+          "on-surface": "rgb(var(--on-surface) / <alpha-value>)", "on-surface-variant": "rgb(var(--on-surface-variant) / <alpha-value>)",
+          "outline": "rgb(var(--outline) / <alpha-value>)", "outline-variant": "rgb(var(--outline-variant) / <alpha-value>)",
+          "error": "rgb(var(--error) / <alpha-value>)"
+        },
+        "spacing": { "md":"16px","xl":"40px","sm":"8px","gutter":"24px","container-max":"1200px","xxl":"64px","xs":"4px","lg":"24px" },
+        "fontFamily": { "body-md":["Hanken Grotesk"],"body-lg":["Hanken Grotesk"],"label-md":["Hanken Grotesk"],"headline-lg":["Hanken Grotesk"],"display":["Hanken Grotesk"],"headline-md":["Hanken Grotesk"],"caption":["Hanken Grotesk"] },
+        "fontSize": {
+          "caption":["12px",{"lineHeight":"1.4","fontWeight":"400"}],
+          "display":["48px",{"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"700"}],
+          "headline-md":["24px",{"lineHeight":"1.3","fontWeight":"600"}],
+          "headline-lg":["32px",{"lineHeight":"1.2","fontWeight":"600"}],
+          "body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],
+          "body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],
+          "label-md":["14px",{"lineHeight":"1.0","letterSpacing":"0.01em","fontWeight":"600"}]
+        }
+      },
+    },
+  }
+</script>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body class="font-body-md text-on-background bg-background min-h-screen flex flex-col selection:bg-primary selection:text-on-primary overflow-x-hidden transition-colors duration-300">
+
+<!-- Nav -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant/20 transition-colors duration-300">
+  <div class="flex justify-between items-center w-full px-gutter py-md max-w-container-max mx-auto">
+    <a href="index.html" class="flex items-center gap-2 group">
+      <span class="material-symbols-outlined text-primary transition-transform duration-300 group-hover:scale-110" style="font-variation-settings:'FILL' 1;">play_circle</span>
+      <span class="font-display text-headline-md text-primary" style="letter-spacing:-0.05em;">StreamPlay</span>
+    </a>
+    <div class="flex items-center gap-sm">
+      <a href="index.html" class="px-md py-xs rounded-lg text-caption text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all flex items-center gap-1">
+        <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+        <span class="hidden sm:inline">Back to Player</span>
+      </a>
+      <button id="themeToggle" class="theme-toggle flex items-center gap-2 pl-1 pr-3 py-1 rounded-full bg-surface-container border border-outline-variant/30 hover:border-primary/40 transition-all" title="Toggle theme">
+        <span id="themeIconDark" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary transition-all">
+          <span class="material-symbols-outlined text-[18px]">dark_mode</span>
+        </span>
+        <span id="themeIconLight" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary transition-all hidden">
+          <span class="material-symbols-outlined text-[18px]">light_mode</span>
+        </span>
+        <span id="themeLabel" class="text-caption font-label-md text-on-surface-variant">Dark</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-grow pt-xxl pb-xxl">
+  <!-- Hero -->
+  <section class="px-gutter py-xxl text-center max-w-container-max mx-auto">
+    <div class="space-y-md max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-sm bg-primary/10 border border-primary/20 px-md py-xs rounded-full mb-lg">
+        <span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings:'FILL' 1;">verified</span>
+        <span class="font-label-md text-label-md text-primary">Digital Agency</span>
+      </div>
+      <h1 class="font-display text-display tracking-tight text-on-background">Famst Agency</h1>
+      <p class="font-body-lg text-body-lg text-outline max-w-2xl mx-auto leading-relaxed">
+        Custom web development, software engineering, AI automation, and digital marketing solutions for startups, entrepreneurs, and businesses.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-md pt-lg">
+        <a href="https://famstagency.com/" target="_blank" class="bg-primary text-on-primary px-xl py-md rounded-lg font-label-md flex items-center gap-2 hover:scale-[1.02] active:scale-95 transition-all glow-hover">
+          <span class="material-symbols-outlined">language</span>
+          Visit Website
+        </a>
+        <a href="https://famstagency.com/contact.php" target="_blank" class="border-2 border-tertiary text-tertiary hover:bg-tertiary/10 px-xl py-md rounded-lg font-label-md flex items-center gap-2 transition-all">
+          <span class="material-symbols-outlined">mail</span>
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="px-gutter py-xxl max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+      <div class="space-y-md">
+        <h2 class="font-headline-lg text-headline-lg text-primary-fixed-dim">Our Mission</h2>
+        <p class="font-body-md text-body-md text-outline leading-relaxed">
+          At Famst Agency, our mission is to empower businesses with innovative digital solutions that simplify operations, improve customer experiences, and accelerate business growth. Every project is built with performance, security, scalability, and long-term success in mind.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-md">
+        <div class="p-lg rounded-xl bg-surface-container border border-outline-variant/20 text-center">
+          <span class="material-symbols-outlined text-primary text-[32px] mb-sm block">code</span>
+          <div class="font-label-md text-label-md text-on-surface">Web Dev</div>
+        </div>
+        <div class="p-lg rounded-xl bg-surface-container border border-outline-variant/20 text-center">
+          <span class="material-symbols-outlined text-tertiary text-[32px] mb-sm block">smart_toy</span>
+          <div class="font-label-md text-label-md text-on-surface">AI Solutions</div>
+        </div>
+        <div class="p-lg rounded-xl bg-surface-container border border-outline-variant/20 text-center">
+          <span class="material-symbols-outlined text-secondary-fixed-dim text-[32px] mb-sm block">shopping_cart</span>
+          <div class="font-label-md text-label-md text-on-surface">E-Commerce</div>
+        </div>
+        <div class="p-lg rounded-xl bg-surface-container border border-outline-variant/20 text-center">
+          <span class="material-symbols-outlined text-primary text-[32px] mb-sm block">trending_up</span>
+          <div class="font-label-md text-label-md text-on-surface">SEO</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="px-gutter py-xxl max-w-container-max mx-auto">
+    <h2 class="font-headline-lg text-headline-lg text-primary-fixed-dim text-center mb-xl">Our Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+      <div class="p-xl rounded-xl bg-surface-container border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <span class="material-symbols-outlined text-primary text-[36px] mb-md block">language</span>
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Website Development</h3>
+        <p class="font-body-md text-body-md text-outline leading-relaxed">Modern, responsive, and SEO-friendly websites including business, portfolio, landing pages, and custom web applications.</p>
+      </div>
+      <div class="p-xl rounded-xl bg-surface-container border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <span class="material-symbols-outlined text-tertiary text-[36px] mb-md block">shopping_basket</span>
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">E-Commerce Development</h3>
+        <p class="font-body-md text-body-md text-outline leading-relaxed">Custom online stores with shopping carts, payment gateway integration, inventory management, and multi-vendor solutions.</p>
+      </div>
+      <div class="p-xl rounded-xl bg-surface-container border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <span class="material-symbols-outlined text-secondary-fixed-dim text-[36px] mb-md block">settings_suggest</span>
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Custom Software</h3>
+        <p class="font-body-md text-body-md text-outline leading-relaxed">CRM, POS, inventory management, booking systems, ERP solutions, and tailor-made business software.</p>
+      </div>
+      <div class="p-xl rounded-xl bg-surface-container border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <span class="material-symbols-outlined text-primary text-[36px] mb-md block">smart_toy</span>
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">AI Solutions</h3>
+        <p class="font-body-md text-body-md text-outline leading-relaxed">Custom AI chatbots, customer support assistants, WhatsApp AI integration, workflow automation, and AI-powered business tools.</p>
+      </div>
+      <div class="p-xl rounded-xl bg-surface-container border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <span class="material-symbols-outlined text-tertiary text-[36px] mb-md block">search</span>
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">SEO & Digital Presence</h3>
+        <p class="font-body-md text-body-md text-outline leading-relaxed">Technical SEO, local SEO, Google Business Profile optimization, keyword research, and SEO audits.</p>
+      </div>
+      <div class="p-xl rounded-xl bg-surface-container border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <span class="material-symbols-outlined text-secondary-fixed-dim text-[36px] mb-md block">developer_board</span>
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Developer Solutions</h3>
+        <p class="font-body-md text-body-md text-outline leading-relaxed">API development, database design, cloud-based applications, system optimization, and technical consulting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="px-gutter py-xxl max-w-container-max mx-auto">
+    <h2 class="font-headline-lg text-headline-lg text-primary-fixed-dim text-center mb-lg">Industries We Serve</h2>
+    <div class="flex flex-wrap justify-center gap-md max-w-2xl mx-auto">
+      <span class="bg-surface-container border border-outline-variant/20 px-md py-sm rounded-full font-label-md text-label-md text-on-surface-variant">Startups</span>
+      <span class="bg-surface-container border border-outline-variant/20 px-md py-sm rounded-full font-label-md text-label-md text-on-surface-variant">Small & Medium Businesses</span>
+      <span class="bg-surface-container border border-outline-variant/20 px-md py-sm rounded-full font-label-md text-label-md text-on-surface-variant">E-commerce Brands</span>
+      <span class="bg-surface-container border border-outline-variant/20 px-md py-sm rounded-full font-label-md text-label-md text-on-surface-variant">Entrepreneurs</span>
+      <span class="bg-surface-container border border-outline-variant/20 px-md py-sm rounded-full font-label-md text-label-md text-on-surface-variant">Service Providers</span>
+      <span class="bg-surface-container border border-outline-variant/20 px-md py-sm rounded-full font-label-md text-label-md text-on-surface-variant">Education</span>
+      <span class="bg-surface-container border border-outline-variant/20 px-md py-sm rounded-full font-label-md text-label-md text-on-surface-variant">Retail</span>
+      <span class="bg-surface-container border border-outline-variant/20 px-md py-sm rounded-full font-label-md text-label-md text-on-surface-variant">Healthcare</span>
+      <span class="bg-surface-container border border-outline-variant/20 px-md py-sm rounded-full font-label-md text-label-md text-on-surface-variant">Manufacturing</span>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="px-gutter py-xxl max-w-container-max mx-auto">
+    <h2 class="font-headline-lg text-headline-lg text-primary-fixed-dim text-center mb-xl">Why Choose Famst Agency?</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md max-w-3xl mx-auto">
+      <div class="flex items-center gap-md p-md rounded-xl bg-surface-container/60 border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary">check_circle</span>
+        <span class="font-body-md text-body-md text-on-surface">Mobile-friendly designs</span>
+      </div>
+      <div class="flex items-center gap-md p-md rounded-xl bg-surface-container/60 border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary">check_circle</span>
+        <span class="font-body-md text-body-md text-on-surface">Fast-loading websites</span>
+      </div>
+      <div class="flex items-center gap-md p-md rounded-xl bg-surface-container/60 border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary">check_circle</span>
+        <span class="font-body-md text-body-md text-on-surface">Secure development</span>
+      </div>
+      <div class="flex items-center gap-md p-md rounded-xl bg-surface-container/60 border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary">check_circle</span>
+        <span class="font-body-md text-body-md text-on-surface">Scalable architecture</span>
+      </div>
+      <div class="flex items-center gap-md p-md rounded-xl bg-surface-container/60 border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary">check_circle</span>
+        <span class="font-body-md text-body-md text-on-surface">SEO-focused development</span>
+      </div>
+      <div class="flex items-center gap-md p-md rounded-xl bg-surface-container/60 border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary">check_circle</span>
+        <span class="font-body-md text-body-md text-on-surface">Reliable support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-gutter py-xxl max-w-container-max mx-auto text-center">
+    <div class="max-w-2xl mx-auto p-xl rounded-xl bg-surface-container border border-outline-variant/20 space-y-lg">
+      <h2 class="font-headline-lg text-headline-lg text-primary-fixed-dim">Ready to Grow Your Business?</h2>
+      <p class="font-body-md text-body-md text-outline leading-relaxed">
+        Whether you need a professional website, custom software, AI automation, an online store, or SEO services, Famst Agency is ready to help transform your ideas into powerful digital solutions.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-md">
+        <a href="https://famstagency.com/" target="_blank" class="bg-primary text-on-primary px-xl py-md rounded-lg font-label-md flex items-center gap-2 hover:scale-[1.02] active:scale-95 transition-all glow-hover">
+          Explore Our Services
+        </a>
+        <a href="https://famstagency.com/contact.php" target="_blank" class="border-2 border-tertiary text-tertiary hover:bg-tertiary/10 px-xl py-md rounded-lg font-label-md flex items-center gap-2 transition-all">
+          Get In Touch
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter border-t border-outline-variant/20 mt-auto bg-surface-container-low/50 transition-colors duration-300">
+  <div class="max-w-container-max mx-auto">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-md mb-lg">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings:'FILL' 1;">play_circle</span>
+        <span class="font-display text-primary text-body-md" style="letter-spacing:-0.03em;">StreamPlay</span>
+      </div>
+      <div class="flex flex-wrap justify-center gap-lg">
+        <a href="index.html" class="flex items-center gap-1 font-label-md text-caption text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+          Player
+        </a>
+        <a href="https://famstagency.com/" target="_blank" rel="noopener" class="flex items-center gap-1 font-label-md text-caption text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-[14px]">language</span>
+          Website
+        </a>
+        <a href="https://famstagency.com/contact.php" target="_blank" rel="noopener" class="flex items-center gap-1 font-label-md text-caption text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-[14px]">mail</span>
+          Contact
+        </a>
+      </div>
+    </div>
+    <div class="border-t border-outline-variant/20 pt-lg">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-md">
+        <p class="font-caption text-caption text-outline text-center md:text-left">
+          StreamPlay is developed and maintained by <a href="about.html" class="text-primary hover:underline font-semibold">Famst Agency</a> — building reliable web, software, AI automation, and digital growth solutions.
+        </p>
+        <div class="flex items-center gap-xs text-outline opacity-60 whitespace-nowrap">
+          <span class="material-symbols-outlined text-[12px]">copyright</span>
+          <span class="font-caption text-caption">2026 Famst Agency. All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const themeToggle = document.getElementById("themeToggle");
+  const themeIconDark = document.getElementById("themeIconDark");
+  const themeIconLight = document.getElementById("themeIconLight");
+  const themeLabel = document.getElementById("themeLabel");
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function applyTheme(theme) {
+    const isDark = theme === "dark";
+    document.documentElement.classList.toggle("dark", isDark);
+    themeIconDark.classList.toggle("hidden", !isDark);
+    themeIconLight.classList.toggle("hidden", isDark);
+    themeLabel.textContent = isDark ? "Dark" : "Light";
+  }
+
+  applyTheme(localStorage.getItem("streamplay-theme") || (systemTheme.matches ? "dark" : "light"));
+
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = document.documentElement.classList.contains("dark") ? "light" : "dark";
+    localStorage.setItem("streamplay-theme", nextTheme);
+    applyTheme(nextTheme);
+  });
+
+  systemTheme.addEventListener("change", event => {
+    if (!localStorage.getItem("streamplay-theme")) {
+      applyTheme(event.matches ? "dark" : "light");
+    }
+  });
+</script>
+</body>
+</html>
