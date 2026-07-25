@@ -73,8 +73,8 @@ streamtape2curl-master/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/famstagency/Streamplay.git
-cd Streamplay
+git clone https://github.com/famstagency/streamplay.git
+cd streamplay
 ```
 
 ### 2. Install dependencies
@@ -140,8 +140,10 @@ Extracts the direct video stream from a StreamTape URL.
 You can add screenshots from the `html ui/` folder or your deployed app here:
 
 ```markdown
-![Home Screen](html ui/home_light_desktop/screenshot.png)
-![Player Screen](html ui/video_player_dark_desktop/screenshot.png)
+![Home Screen Light](screens/homelight.png)
+![Player Screen Light](screens/light.png)
+![Home Screen Dark](screens/homedark.png)
+![Player Screen Dark](screens/dark.png)
 ```
 
 ---
