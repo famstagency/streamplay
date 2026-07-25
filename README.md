@@ -2,17 +2,8 @@
 
 > A fast, private, zero-ad web player for StreamTape links. Paste a URL and watch instantly — no signup, no tracking, no clutter.
 
-[![Vercel](https://img.shields.io/badge/Live%20Demo-Vercel-000000?logo=vercel&logoColor=white)](https://YOUR_VERCEL_URL.vercel.app/)
 [![Famst Agency](https://img.shields.io/badge/Built%20by-Famst%20Agency-0066ff)](https://famstagency.com/)
 [![License](https://img.shields.io/badge/License-Do%20Whatever%20You%20Want-success)](LICENSE)
-
----
-
-## Live Demo
-
-The project is hosted on Vercel. Replace the badge and link below with your deployed URL once it's live:
-
-**[https://YOUR_VERCEL_URL.vercel.app/](https://YOUR_VERCEL_URL.vercel.app/)**
 
 ---
 
@@ -21,6 +12,8 @@ The project is hosted on Vercel. Replace the badge and link below with your depl
 StreamPlay is a lightweight open-source video player built for StreamTape links. It extracts the direct stream from a StreamTape URL and plays it in a clean, modern, responsive interface with dark/light mode, keyboard controls, picture-in-picture, playback speed, volume controls, and more.
 
 This project was developed by **[Famst Agency](https://famstagency.com/)** as a free tool for the community.
+
+To use StreamPlay, simply clone the repository and run it locally (see instructions below).
 
 ---
 
@@ -34,7 +27,6 @@ This project was developed by **[Famst Agency](https://famstagency.com/)** as a 
 - **Custom controls** — Play/pause, seek ±10s, progress bar, volume, mute, PiP, fullscreen.
 - **Playback settings** — Speed control (0.5x to 2x), auto-play toggle.
 - **Responsive** — Works on desktop, tablet, and mobile.
-- **Vercel-ready** — Deploy the frontend + API in seconds.
 
 ---
 
@@ -43,8 +35,7 @@ This project was developed by **[Famst Agency](https://famstagency.com/)** as a 
 | Layer | Technology |
 |-------|------------|
 | Frontend | HTML5, Tailwind CSS (CDN), Vanilla JavaScript |
-| Backend API | Node.js + `axios` (Vercel Serverless Function) |
-| Hosting | Vercel |
+| Backend API | Node.js + `axios` |
 | Design System | Material 3-inspired colors & components |
 
 ---
@@ -54,17 +45,16 @@ This project was developed by **[Famst Agency](https://famstagency.com/)** as a 
 ```
 streamtape2curl-master/
 ├── api/
-│   └── extract.js          # Vercel serverless function to extract direct StreamTape URL
+│   └── extract.js          # Server function to extract direct StreamTape URL
 ├── nodejs/
 │   └── streamtape.js       # Standalone Node.js reference implementation
 ├── html ui/                # UI mockups and design references
 ├── index.html              # Main player UI
-├── about.html              # About / Famst Agency page
-├── script.js               # Frontend logic
-├── style.css               # Custom styles & animations
-├── vercel.json             # Vercel routing configuration
-├── package.json            # Node dependencies
-└── README.md               # You are here
+├── about.html               # About / Famst Agency page
+├── script.js                # Frontend logic
+├── style.css                # Custom styles & animations
+├── package.json              # Node dependencies
+└── README.md                 # You are here
 ```
 
 ---
@@ -73,18 +63,18 @@ streamtape2curl-master/
 
 1. The user pastes a StreamTape video URL into the input field.
 2. The frontend calls `/api/extract?url=...`.
-3. The serverless function fetches the StreamTape page, parses the stream token, and builds the direct video URL.
+3. The server function fetches the StreamTape page, parses the stream token, and builds the direct video URL.
 4. The direct URL is returned as JSON and loaded into the HTML5 `<video>` player.
 
 ---
 
-## Local Development
+## Getting Started
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+git clone https://github.com/famstagency/Streamplay.git
+cd Streamplay
 ```
 
 ### 2. Install dependencies
@@ -101,35 +91,7 @@ For the frontend, you can open `index.html` directly in a browser, or serve it w
 npx serve .
 ```
 
-For the API, use the Vercel CLI for the closest production-like environment:
-
-```bash
-npm i -g vercel
-vercel dev
-```
-
-Then open `http://localhost:3000` (or the port Vercel assigns).
-
----
-
-## Deploy to Vercel
-
-Click the button below to deploy instantly, or push to a GitHub repo connected to Vercel.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/YOUR_REPO_NAME)
-
-### Manual deployment
-
-```bash
-npm i -g vercel
-vercel
-```
-
-Then update this README with your live URL:
-
-```markdown
-**[https://your-project.vercel.app/](https://your-project.vercel.app/)**
-```
+For the API, run your Node.js server (see `api/extract.js` and `nodejs/streamtape.js` for reference implementations) and point the frontend at your local endpoint.
 
 ---
 
